@@ -25,7 +25,7 @@ public class Curso {
     }
 
     public void setId(int id) {
-        this.id = this.id;
+        this.id = id;
     }
 
     public String getNome() {

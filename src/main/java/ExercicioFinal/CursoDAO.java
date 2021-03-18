@@ -122,4 +122,29 @@ public class CursoDAO {
     }
 
 
+    // 4 - Atualizar
+
+    public void update(Curso curso) {
+        try (Connection conn = ConnectionFactory.getConnection()){
+
+            // Preparar SQL para atualizar as linhas
+            String sql = "UPDATE curso SET nome = ? , duracao_horas = ? WHERE id = ?";
+
+            // Preparar statement com os parâmetros recebidos
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            stmt.setString(1, curso.getNome());
+            stmt.setString(2, curso.getDuracaoHoras());
+            stmt.setInt(3, curso.getId());
+
+            // Executa atualização e armazena o numero de linhas afetadas
+            int rowsAffected = stmt.executeUpdate();
+
+            System.out.println("Atualização BEM SUCEDIDA! Foi atualizada: " + rowsAffected + " linha");
+        } catch (SQLException e) {
+            System.out.println("Atualização FALHOU!");
+            e.printStackTrace();
+        }
+    }
+
+
 }

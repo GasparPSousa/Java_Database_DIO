@@ -31,9 +31,23 @@ public class QueriesExecution {
 
 
         // =========================== 3 - Delete ===================================================
-        cursoDAO.list().stream().forEach(System.out::println);
+//        cursoDAO.list().stream().forEach(System.out::println);
+//
+//        cursoDAO.delete(7);
+//
+//        cursoDAO.list().stream().forEach(System.out::println);
 
-        cursoDAO.delete(7);
+
+        // =========================== 4 - Atualizar ================================================
+
+        cursoDAO.list().stream().forEach(System.out::println);
+        
+        Curso cursoParaAtualizar = cursoDAO.getById(6);
+        cursoParaAtualizar.setNome("VIM");
+        cursoParaAtualizar.setDuracaoHoras("3");
+
+
+        cursoDAO.update(cursoParaAtualizar);
 
         cursoDAO.list().stream().forEach(System.out::println);
     }
