@@ -1,0 +1,8 @@
+ExercicioFinal/ConnectionFactory.java
+ ExercicioFinal.ConnectionFactory
+ExercicioFinal/CursoDAO.java
+ ExercicioFinal.CursoDAO
+ExercicioFinal/QueriesExecution.java
+ ExercicioFinal.QueriesExecution
+ExercicioFinal/Curso.java
+ ExercicioFinal.Curso
