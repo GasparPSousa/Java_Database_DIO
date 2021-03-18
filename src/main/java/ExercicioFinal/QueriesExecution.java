@@ -12,6 +12,14 @@ public class QueriesExecution {
 
         List<Curso> cursos = cursoDAO.list();
 
-        cursos.stream().forEach(System.out::println);
+        //cursos.stream().forEach(System.out::println);
+
+
+        // ======================= 1.1 - Consulta com filtro ========================================
+        Curso cursoParaConsulta = cursoDAO.getById(3);
+
+        System.out.println(cursoParaConsulta);
+
+
     }
 }
