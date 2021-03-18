@@ -10,7 +10,7 @@ public class QueriesExecution {
 
         //=========================== 1 - Consulta =========================
 
-        List<Curso> cursos = cursoDAO.list();
+        //List<Curso> cursos = cursoDAO.list();
 
         //cursos.stream().forEach(System.out::println);
 
@@ -23,10 +23,18 @@ public class QueriesExecution {
 
         // =========================== 2 - Inserção =================================================
         Curso cursoParaInsercao = new Curso(
-                "Linux",
-                "15"
+                "Git",
+                "4"
         );
 
-        cursoDAO.create(cursoParaInsercao);
+        //cursoDAO.create(cursoParaInsercao);
+
+
+        // =========================== 3 - Delete ===================================================
+        cursoDAO.list().stream().forEach(System.out::println);
+
+        cursoDAO.delete(7);
+
+        cursoDAO.list().stream().forEach(System.out::println);
     }
 }

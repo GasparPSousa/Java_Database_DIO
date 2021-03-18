@@ -99,4 +99,27 @@ public class CursoDAO {
             e.printStackTrace();
         }
     }
+
+    // 3 - Delete
+    public void delete(int id) {
+        try(Connection conn = ConnectionFactory.getConnection()) {
+
+            // Preparar SQL para deletar uma linha
+            String sql = "DELETE FROM curso WHERE id = ?";
+
+            // Preparar statement com os parametros recebidos
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            stmt.setInt(1, id);
+
+            // Executa o delete e armazena o numero de linhas afetadas
+            int rowsAffected = stmt.executeUpdate();
+
+            System.out.println("Delete BEM SUCEDIDA! Foi deletada " + rowsAffected + " linha");
+        } catch (SQLException e) {
+            System.out.println("Delete FALHOU!");
+            e.printStackTrace();
+        }
+    }
+
+
 }
