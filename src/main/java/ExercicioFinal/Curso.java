@@ -4,18 +4,18 @@ public class Curso {
 
     private int id;
     private String nome;
-    private String duracaoHoras;
+    private String duracao_horas;
 
-    public Curso(int id, String nome, String duracaoHoras) {
+    public Curso(int id, String nome, String duracao_horas) {
         this.id = id;
         this.nome = nome;
-        this.duracaoHoras = duracaoHoras;
+        this.duracao_horas = duracao_horas;
 
     }
 
-    public Curso(String nome, String duracaoHoras) {
+    public Curso(String nome, String duracao_horas) {
         this.nome = nome;
-        this.duracaoHoras = duracaoHoras;
+        this.duracao_horas = duracao_horas;
     }
 
     public Curso() { }
@@ -40,11 +40,11 @@ public class Curso {
 
     public String getDuracaoHoras() {
 
-        return duracaoHoras;
+        return duracao_horas;
     }
 
-    public void setDuracaoHoras(String duracaoHoras) {
-        this.duracaoHoras = duracaoHoras;
+    public void setDuracaoHoras(String duracao_horas) {
+        this.duracao_horas = duracao_horas;
     }
 
     @Override
@@ -52,7 +52,7 @@ public class Curso {
         final StringBuilder sb = new StringBuilder("Curso{");
         sb.append("id=").append(id);
         sb.append(", nome='").append(nome).append('\'');
-        sb.append(", duracao_horas=").append(duracaoHoras);
+        sb.append(", duracao_horas=").append(duracao_horas);
         sb.append('}');
         return sb.toString();
     }

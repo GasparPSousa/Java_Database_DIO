@@ -1,3 +1,7 @@
 **.gradle
 **.idea
 **build
+/.gradle/
+/build/
+/out/
+/out/production/classes/

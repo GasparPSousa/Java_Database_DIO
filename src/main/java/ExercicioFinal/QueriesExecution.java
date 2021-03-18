@@ -18,8 +18,15 @@ public class QueriesExecution {
         // ======================= 1.1 - Consulta com filtro ========================================
         Curso cursoParaConsulta = cursoDAO.getById(3);
 
-        System.out.println(cursoParaConsulta);
+        //System.out.println(cursoParaConsulta);
 
 
+        // =========================== 2 - Inserção =================================================
+        Curso cursoParaInsercao = new Curso(
+                "Linux",
+                "15"
+        );
+
+        cursoDAO.create(cursoParaInsercao);
     }
 }

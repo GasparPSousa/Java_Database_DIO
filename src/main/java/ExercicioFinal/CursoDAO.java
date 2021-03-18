@@ -77,4 +77,26 @@ public class CursoDAO {
         //Retorna aluno encontrado no banco de dados.
         return aluno;
     }
+
+    // 2- Inserção
+    public void create(Curso curso) {
+        try (Connection conn = ConnectionFactory.getConnection()) {
+
+            // Preparar SQL para a inserção de dados do curso
+            String sql = "INSERT INTO curso(nome, duracao_horas) VALUES(?, ?)";
+
+            // Preparar statement com os parâmetros recebidos
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            stmt.setString(1, curso.getNome());
+            stmt.setString(2, curso.getDuracaoHoras());
+
+            // Executa inserção e armazena o numero de linhas afetadas
+            int rowsAffected = stmt.executeUpdate();
+
+            System.out.println("Inserção BEM SUCEDIDA!. Foi adocionada " + rowsAffected + " linha");
+        } catch (SQLException e) {
+            System.out.println("Inserção FALHOU!");
+            e.printStackTrace();
+        }
+    }
 }
